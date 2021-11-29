@@ -1,9 +1,9 @@
 .App {
   text-align: center;
 }
-.app-wrapper {
-  
-}
+
+.app-wrapper {}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -34,7 +34,24 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.bg-red {
+  background-color: #ea7070;
+}
+
+.bg-orange {
+  background-color: #f0b071;
+}
+
+.bg-blue-violet {
+  background: #9b71f4;
+}
+
+.bg-light-blue {
+  background-color: #71d5f4;
 }

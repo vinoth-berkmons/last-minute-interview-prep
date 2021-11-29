@@ -6,7 +6,7 @@ import './Header.css'
 const Header: FC = () => {
     return (
         <div className="header header-fixed">
-            Header
+            
         </div>
     )
 }
