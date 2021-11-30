@@ -1,10 +1,7 @@
-import React, { Fragment, lazy, Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { FallbackView } from '../common/fallback-view/FallbackView';
+import React, { lazy, Suspense } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
-// import { MasterLayout } from '../../layout/MasterLayout';
-// import { Dashboard } from '../modules/dashboard/Dashboard';
-// import Topics from '../modules/topics/Topics';
+import { FallbackView } from '../common/fallback-view/FallbackView';
 
 export function PublicRoutes() {
 
