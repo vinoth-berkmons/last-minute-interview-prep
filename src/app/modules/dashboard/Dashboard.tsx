@@ -45,6 +45,37 @@ const Dashboard: FC = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="container mx-auto p-3">
+                <div className="card bg-white">
+                    <div className="card-header header-text">
+                        <p>Todays' Questions</p>
+                    </div>
+                    <div className="card-body">
+                        <div className="flex align-middle mb-7">
+                            <div className="qus-title mr-7">
+                                <p>
+                                    Explain Concurrency?
+                                </p>
+                            </div>
+                            <div className="text-center">
+                                <span className="badge badge-light-info">Golang</span>
+                            </div>
+                        </div>
+
+                        <div className="flex align-middle mb-7">
+                            <div className="qus-title mr-7">
+                                <p>
+                                    What is Lazy loading?
+                                </p>
+                            </div>
+                            <div className="text-center">
+                                <span className="badge badge-light-primary">Frontend</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

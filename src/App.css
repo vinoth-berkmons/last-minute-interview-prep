@@ -49,9 +49,37 @@
 }
 
 .bg-blue-violet {
-  background: #9b71f4;
+  background-color: #9b71f4;
 }
 
 .bg-light-blue {
   background-color: #71d5f4;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5em 0.85em;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.475rem;
+}
+
+
+.badge-light-info {
+  color: #7239ea;
+  background-color: #f8f5ff;
+}
+
+.badge-light-primary {
+  color: #009ef7;
+  background-color: #f8f5ff;
 }

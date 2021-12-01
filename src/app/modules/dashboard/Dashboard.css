@@ -16,3 +16,24 @@
     padding: 1rem 2.25rem;
     text-align: center;
 }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    min-height: 70px;
+    padding: 0 2.25rem;
+    background-color: transparent;
+}
+
+.header-text {
+    text-align: center;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+}
+
+.qus-title {
+    color: #000;
+}
