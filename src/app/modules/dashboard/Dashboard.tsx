@@ -48,7 +48,7 @@ const Dashboard: FC = () => {
 
             <div className="container mx-auto p-3">
                 <div className="card bg-white">
-                    <div className="card-header header-text">
+                    <div className="card-header header-text text-2xl">
                         <p>Todays' Questions</p>
                     </div>
                     <div className="card-body">
