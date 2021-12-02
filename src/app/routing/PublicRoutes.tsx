@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { FallbackView } from '../common/fallback-view/FallbackView';
+import { FallbackView } from '../common/components/fallback-view/FallbackView';
 
 export function PublicRoutes() {
 
