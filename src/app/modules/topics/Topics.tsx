@@ -1,4 +1,26 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
+
+import { TopicItem } from './topic/topic';
+
+const topics = [
+    {
+        id: '22222',
+        title: 'Front-end',
+    },
+    {
+        id: '22222',
+        title: 'Back-end',
+    },
+    {
+        id: '22222',
+        title: 'HR',
+    },
+
+    {
+        id: '22222',
+        title: 'Salary Negotiation',
+    }
+]
 
 const Topics: FC = () => {
     return (
@@ -6,37 +28,11 @@ const Topics: FC = () => {
             <div className="container mx-auto p-3">
                 <div className="card bg-white">
                     <div className="card-body text-black">
-                        <div className="flex align-middle mb-7">
-                            <div className="qus-title mr-7">
-                                <p>
-                                    Frontend
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex align-middle mb-7">
-                            <div className="qus-title mr-7">
-                                <p>
-                                   Backend
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex align-middle mb-7">
-                            <div className="qus-title mr-7">
-                                <p>
-                                   HR
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex align-middle mb-7">
-                            <div className="qus-title mr-7">
-                                <p>
-                                   Salary Negotiation
-                                </p>
-                            </div>
-                        </div>
+                        {
+                            topics.map(topic => {
+                                return <TopicItem key={topic.id} cardProp={topic} />
+                            })
+                        }
                     </div>
                 </div>
             </div>
