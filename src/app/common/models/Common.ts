@@ -1,6 +1,6 @@
 export interface DashboardStatistics {
     title: string;
-    count: string;
+    count: number;
 }
 
 

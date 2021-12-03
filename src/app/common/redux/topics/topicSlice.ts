@@ -17,6 +17,7 @@ const initialState = {
 } as TopicState
 
 export const selectTopicStatus = (state: RootState) => state.topics.status;
+export const selectTopics = (state: RootState) => state.topics;
 
 
 const topicSlice = createSlice({

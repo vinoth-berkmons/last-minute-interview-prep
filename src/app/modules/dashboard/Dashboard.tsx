@@ -4,7 +4,7 @@ import { useTypedSelector } from "../../../setup/redux/Store";
 import { Card } from "../../common/components/card/Card";
 import { DASHBOARD_STATISTICS } from "../../common/constants/constants";
 import { CardProp } from "../../common/models/Common";
-import { selectTopicStatus } from "../../common/redux/topics/topicSlice";
+import { selectTopics, selectTopicStatus } from "../../common/redux/topics/topicSlice";
 import { GetTopics } from "../../common/services/topics";
 
 import './Dashboard.css'
@@ -14,17 +14,17 @@ const Dashboard: FC = () => {
 
     const dispatch = useDispatch();
 
-    const status = useTypedSelector(selectTopicStatus)
-
     useEffect(() => {
-        dispatch(GetTopics)
+        dispatch(GetTopics(''))
     }, [])
 
+    const topic = useTypedSelector(selectTopics)
+
     const statistics = DASHBOARD_STATISTICS;
-    const questions: CardProp = { ...statistics['QUESTIONS'], count: '234' }
-    const topics: CardProp = { ...statistics['TOPICS'], count: '34' }
-    const interviews: CardProp = { ...statistics['INTERVIEWS'], count: '12' }
-    const assignments: CardProp = { ...statistics['ASSIGNMENTS'], count: '36' }
+    const questions: CardProp = { ...statistics['QUESTIONS'], count: 234 }
+    const topics: CardProp = { ...statistics['TOPICS'], count: topic.topics.length }
+    const interviews: CardProp = { ...statistics['INTERVIEWS'], count: 12 }
+    const assignments: CardProp = { ...statistics['ASSIGNMENTS'], count: 36 }
     return (
         <>
             <div className="container mx-auto p-3">
@@ -34,7 +34,7 @@ const Dashboard: FC = () => {
                     </div>
 
                     <div className="flex-1">
-                        {status === 'loading' ? "Loading...." : <Card cardProp={topics} />}
+                        {topic.status === 'loading' ? "Loading...." : <Card cardProp={topics} />}
                     </div>
                 </div>
                 <div className="flex space-x-4">

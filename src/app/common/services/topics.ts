@@ -9,7 +9,7 @@ export const GetQuestions = createAsyncThunk(
     async () => await axios.get(`${BASE_URL}`)
 );
 
-export const GetTopics = createAsyncThunk<Topic[], number, { rejectValue: FetchTopicError }>(
+export const GetTopics = createAsyncThunk<Topic[], unknown, { rejectValue: FetchTopicError }>(
     "topics/getTopics",
     async (_number, thunkApi) => {
         const response = await axios.get(BASE_URL);
