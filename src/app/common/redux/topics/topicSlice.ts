@@ -32,7 +32,7 @@ const topicSlice = createSlice({
             state.error = null;
         });
         builder.addCase(GetTopics.fulfilled, (state, { payload }) => {
-            state.topics.push(...payload);
+            state.topics = payload;
             state.status = "idle";
         });
         builder.addCase(GetTopics.rejected, (state, { payload }) => {
