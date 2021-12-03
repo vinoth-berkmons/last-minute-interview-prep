@@ -1,7 +1,7 @@
-import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { FetchTopicError, Topic } from "../models/Topics";
-import { RootState } from "../../../setup/redux/RootReducer";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+import { FetchTopicError, Topic } from '../models/Topics';
 
 const BASE_URL = "https://mocki.io/v1/85912c26-b2aa-4ae3-9b4f-eedd4b6afc4f";
 

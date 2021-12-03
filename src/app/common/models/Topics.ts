@@ -18,3 +18,17 @@ export interface QuestionStatistics {
 export type FetchTopicError = {
     message: string;
 }
+
+export interface Questions {
+    id: string;
+    title: string;
+    answer?: string
+}
+
+export interface QuestionsCardProps {
+    header: string;
+    questions: Questions[];
+    style: {
+        bg: string;
+    }
+}

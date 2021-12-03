@@ -4,11 +4,13 @@ import React, { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useTypedSelector } from '../../../setup/redux/Store';
-import { Card } from '../../common/components/card/Card';
 import { DASHBOARD_STATISTICS } from '../../common/constants/constants';
 import { CardProp } from '../../common/models/Common';
 import { selectTopics } from '../../common/redux/topics/topicSlice';
 import { GetTopics } from '../../common/services/topics';
+import { Card, QuestionsCard } from '../../common/components';
+import { QuestionsCardProps } from '../../common/models/Topics';
+
 
 
 const Dashboard: FC = () => {
@@ -26,6 +28,14 @@ const Dashboard: FC = () => {
     const topics: CardProp = { ...statistics['TOPICS'], count: topic.topics.length }
     const interviews: CardProp = { ...statistics['INTERVIEWS'], count: 12 }
     const assignments: CardProp = { ...statistics['ASSIGNMENTS'], count: 36 }
+
+    const QuestionsProp: QuestionsCardProps = {
+        header: "Today's Questions",
+        style: {
+            bg: "bg-white"
+        },
+        questions: topic.topics
+    }
     return (
         <>
             <div className="container mx-auto p-3">
@@ -49,34 +59,7 @@ const Dashboard: FC = () => {
             </div>
 
             <div className="container mx-auto p-3">
-                <div className="card bg-white">
-                    <div className="card-header header-text text-2xl">
-                        <p>Todays' Questions</p>
-                    </div>
-                    <div className="card-body">
-                        <div className="flex align-middle mb-7">
-                            <div className="qus-title mr-7">
-                                <p>
-                                    Explain Concurrency?
-                                </p>
-                            </div>
-                            <div className="text-center">
-                                <span className="badge badge-light-info">Golang</span>
-                            </div>
-                        </div>
-
-                        <div className="flex align-middle mb-7">
-                            <div className="qus-title mr-7">
-                                <p>
-                                    What is Lazy loading?
-                                </p>
-                            </div>
-                            <div className="text-center">
-                                <span className="badge badge-light-primary">Frontend</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <QuestionsCard cardProp={QuestionsProp} />
             </div>
         </>
     )
