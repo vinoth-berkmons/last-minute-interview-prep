@@ -1,44 +1,30 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useTypedSelector } from "../../../setup/redux/Store";
 import { Card } from "../../common/components/card/Card";
+import { DASHBOARD_STATISTICS } from "../../common/constants/constants";
+import { CardProp } from "../../common/models/Common";
+import { selectTopicStatus } from "../../common/redux/topics/topicSlice";
+import { GetTopics } from "../../common/services/topics";
 
 import './Dashboard.css'
 
-const questions = {
-    title: 'Questions',
-    count: '123',
-    style: {
-        bg: 'bg-red'
-    }
-}
-
-const topics = {
-    title: 'Topics',
-    count: '12',
-    style: {
-        bg: 'bg-orange'
-    }
-}
-
-
-const interviews = {
-    title: 'Interviews',
-    count: '36',
-    style: {
-        bg: 'bg-light-blue'
-    }
-}
-
-
-const assignments = {
-    title: 'Assignments',
-    count: '224',
-    style: {
-        bg: 'bg-blue-violet'
-    }
-}
 
 const Dashboard: FC = () => {
 
+    const dispatch = useDispatch();
+
+    const status = useTypedSelector(selectTopicStatus)
+
+    useEffect(() => {
+        dispatch(GetTopics)
+    }, [])
+
+    const statistics = DASHBOARD_STATISTICS;
+    const questions: CardProp = { ...statistics['QUESTIONS'], count: '234' }
+    const topics: CardProp = { ...statistics['TOPICS'], count: '34' }
+    const interviews: CardProp = { ...statistics['INTERVIEWS'], count: '12' }
+    const assignments: CardProp = { ...statistics['ASSIGNMENTS'], count: '36' }
     return (
         <>
             <div className="container mx-auto p-3">
@@ -48,7 +34,7 @@ const Dashboard: FC = () => {
                     </div>
 
                     <div className="flex-1">
-                        <Card cardProp={topics} />
+                        {status === 'loading' ? "Loading...." : <Card cardProp={topics} />}
                     </div>
                 </div>
                 <div className="flex space-x-4">

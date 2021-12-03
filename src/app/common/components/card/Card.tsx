@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { CardProp, DashboardStatistics } from "../../models/Common"
 
 
 const Card: FC<Props> = ({ cardProp }) => {
@@ -18,11 +19,4 @@ export { Card }
 
 interface Props {
     cardProp: CardProp;
-}
-interface CardProp {
-    title: string;
-    count: string;
-    style: {
-        bg: string;
-    }
 }
