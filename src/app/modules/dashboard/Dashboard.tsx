@@ -1,13 +1,14 @@
-import React, { FC, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useTypedSelector } from "../../../setup/redux/Store";
-import { Card } from "../../common/components/card/Card";
-import { DASHBOARD_STATISTICS } from "../../common/constants/constants";
-import { CardProp } from "../../common/models/Common";
-import { selectTopics, selectTopicStatus } from "../../common/redux/topics/topicSlice";
-import { GetTopics } from "../../common/services/topics";
+import './Dashboard.css';
 
-import './Dashboard.css'
+import React, { FC, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { useTypedSelector } from '../../../setup/redux/Store';
+import { Card } from '../../common/components/card/Card';
+import { DASHBOARD_STATISTICS } from '../../common/constants/constants';
+import { CardProp } from '../../common/models/Common';
+import { selectTopics } from '../../common/redux/topics/topicSlice';
+import { GetTopics } from '../../common/services/topics';
 
 
 const Dashboard: FC = () => {
@@ -15,7 +16,7 @@ const Dashboard: FC = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(GetTopics(''))
+        dispatch(GetTopics())
     }, [])
 
     const topic = useTypedSelector(selectTopics)
