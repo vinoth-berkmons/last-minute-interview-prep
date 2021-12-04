@@ -5,6 +5,12 @@ export interface DashboardStatistics {
     count: number;
 }
 
+export interface Questions {
+    id: string;
+    question: string;
+    ans: string;
+    label: string;
+}
 
 export interface HttpLoadingAndErrorState {
     status: "loading" | "done";
@@ -15,8 +21,14 @@ export interface DashboardHttpState extends HttpLoadingAndErrorState {
     statistics: DashboardStatistics[];
 }
 
+export interface QuestionsHttpState extends HttpLoadingAndErrorState {
+    questions: Questions[];
+}
+
 export interface CardStyle {
-    bg: string;
+    bg?: string;
+    headerTitle?: string;
+    color?: string;
 }
 
 export type FetchHttpError = {

@@ -4,11 +4,13 @@ import React, { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useTypedSelector } from '../../../store/redux/Store';
-import { Card } from '../../common/components';
+import { Card, QuestionsCard } from '../../common/components';
 import { DASHBOARD_STATISTICS } from '../../common/constants/constants';
-import { StatisticsLabel } from '../../common/models/Common';
+import { CardStyle, StatisticsLabel } from '../../common/models/Common';
 import { selectDashboardStatistics } from './redux/dashboardSlice';
 import { GetDashboardStatistics } from './service/dashboardService';
+import { GetQuestionList } from '../../common/services/questions';
+import { selectQuestions } from '../../../store/redux/common/questionsSlice';
 
 
 /**
@@ -31,23 +33,27 @@ const Dashboard: FC = () => {
      */
     useEffect(() => {
         dispatch(GetDashboardStatistics())
-    })
+    },[])
+
+    useEffect(() => {
+        dispatch(GetQuestionList())
+    },[])
 
     /**
      * Get the list of statistics
      */
     const statistics = useTypedSelector(selectDashboardStatistics)
+    const questions = useTypedSelector(selectQuestions)
 
+    console.log('statistics', statistics);
     /**
      * Prepare props for Question component
      */
-    // const QuestionsProp: QuestionsCardProps = {
-    //     header: "Today's Questions",
-    //     style: {
-    //         bg: "bg-white"
-    //     },
-    //     questions: topic.topics
-    // }
+    const cardStyle: CardStyle = {
+        headerTitle: "Today's Questions",
+        bg: "bg-white"
+    }
+
     return (
         <>
             <div className="container mx-auto p-3">
@@ -55,7 +61,8 @@ const Dashboard: FC = () => {
                     <div className="flex-1">
                         {statistics.status === 'loading' ? "Loading...." :
                             statistics.statistics.map(statistic => {
-                                const labelCaps: StatisticsLabel = statistic.label.toUpperCase() as StatisticsLabel;
+                                console.log('statistics', statistics);
+                                const labelCaps: StatisticsLabel = (statistic.label.toUpperCase()) as StatisticsLabel;
                                 const style = DASHBOARD_STATISTICS[`${labelCaps}`].style;
                                 return <Card
                                     key={statistic.id}
@@ -68,9 +75,9 @@ const Dashboard: FC = () => {
                 </div>
             </div>
 
-            {/* <div className="container mx-auto p-3">
-                <QuestionsCard cardProp={QuestionsProp} />
-            </div> */}
+            <div className="container mx-auto p-3">
+                <QuestionsCard cardProp={questions.questions} cardStyle={cardStyle} />
+            </div>
         </>
     )
 }

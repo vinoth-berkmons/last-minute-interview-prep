@@ -1,14 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { DashboardStatistics, FetchHttpError } from "../../../common/models/Common";
+import { FetchHttpError, Questions } from "../models/Common";
+
+const QUESTIONS_LIST = "https://lastminuteprep.mocklab.io/v1/questions";
 
 
-const GET_STATISTICS = "http://lastminuteprep.mocklab.io/v1/statistics"
 
-export const GetDashboardStatistics = createAsyncThunk<DashboardStatistics[], void, { rejectValue: FetchHttpError }>(
+export const GetQuestionList = createAsyncThunk<Questions[], void, { rejectValue: FetchHttpError }>(
     "dashboard/getStatistics",
     async (_number, thunkApi) => {
-        const response = await axios.get(GET_STATISTICS);
+        const response = await axios.get(QUESTIONS_LIST);
 
         if (response.status !== 200) {
             return thunkApi.rejectWithValue({
