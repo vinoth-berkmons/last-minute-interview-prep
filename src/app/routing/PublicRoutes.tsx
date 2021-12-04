@@ -5,8 +5,8 @@ import { FallbackView } from '../common/components/fallback-view/FallbackView';
 
 export function PublicRoutes() {
 
-    const Dashboard = lazy(() => import('../modules/dashboard/Dashboard'))
-    const Topics = lazy(() => import('../modules/topics/Topics'))
+    const Dashboard = lazy(() => import('../containers/dashboard/Dashboard'))
+    const Topics = lazy(() => import('../containers/topics/Topics'))
     return (
         <Suspense fallback={<FallbackView />}>
             <Switch>
@@ -17,3 +17,5 @@ export function PublicRoutes() {
         </Suspense>
     )
 }
+
+/** Route Links */

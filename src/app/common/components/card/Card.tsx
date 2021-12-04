@@ -1,13 +1,14 @@
-import React, { FC } from "react"
-import { CardProp, DashboardStatistics } from "../../models/Common"
+import React, { FC } from 'react';
+
+import { CardStyle, DashboardStatistics } from '../../models/Common';
 
 
-const Card: FC<Props> = ({ cardProp }) => {
+const Card: FC<Props> = ({ cardProp, cardStyle }) => {
     return (
         <>
-            <div className={`card ${cardProp.style.bg}`}>
+            <div className={`card ${cardStyle.bg}`}>
                 <div className="card-body">
-                    <h5 className="text-lg mb-4 mt-0">{cardProp.title}</h5>
+                    <h5 className="text-lg mb-4 mt-0">{cardProp.label}</h5>
                     <p className=" text-2xl">{cardProp.count}</p>
                 </div>
             </div>
@@ -18,5 +19,6 @@ const Card: FC<Props> = ({ cardProp }) => {
 export { Card }
 
 interface Props {
-    cardProp: CardProp;
+    cardProp: DashboardStatistics;
+    cardStyle: CardStyle
 }

@@ -15,9 +15,6 @@ export interface QuestionStatistics {
     count: string;
 }
 
-export type FetchTopicError = {
-    message: string;
-}
 
 export interface Questions {
     id: string;
