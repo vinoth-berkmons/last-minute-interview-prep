@@ -1,31 +1,24 @@
+import { HttpLoadingAndErrorState } from "./Common";
+
 export type TopicId = string;
 
-export type Topic = {
-    id: TopicId;
-    title: string;
+export interface Topic {
+    id: string;
+    label: string;
+    subTopic: SubTopic[]
 }
 
-export interface TopicStatistics {
-    title: string;
-    count: string;
+interface SubTopic {
+
+    id: string;
+    label: string;
 }
-
-export interface QuestionStatistics {
-    title: string;
-    count: string;
-}
-
-
 export interface Questions {
     id: string;
     title: string;
     answer?: string
 }
 
-export interface QuestionsCardProps {
-    header: string;
-    questions: Questions[];
-    style: {
-        bg: string;
-    }
+export interface TopicHttpState extends HttpLoadingAndErrorState {
+    topics: Topic[];
 }

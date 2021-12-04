@@ -7,7 +7,7 @@ const TopicItem: FC<Props> = ({cardProp}) => {
             <div className="flex align-middle mb-7">
                 <div className="qus-title mr-7">
                     <p>
-                        {cardProp.title}
+                        {cardProp.label}
                     </p>
                 </div>
             </div>

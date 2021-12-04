@@ -1,19 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Topic } from "../../../app/common/models/Topics";
-import { RootState } from "../RootReducer";
+import { createSlice } from '@reduxjs/toolkit';
+
+import { RootState } from '../../../../store/redux/RootReducer';
+import { TopicHttpState } from '../../../common/models/Topics';
+import { GetTopics } from '../service/topic';
 
 
-type TopicState = {
-    status: "loading" | "done";
-    error: string | null;
-    topics: Topic[]
-}
 
 const initialState = {
     topics: [],
     status: "done",
-    error: null,
-} as TopicState
+    error: null
+} as TopicHttpState
+
+
 
 export const selectTopicStatus = (state: RootState) => state.topics.status;
 export const selectTopics = (state: RootState) => state.topics;
