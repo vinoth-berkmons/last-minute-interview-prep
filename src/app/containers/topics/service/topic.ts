@@ -7,16 +7,16 @@ import { Topic } from '../../../common/models/Topics';
 
 
 
-const GET_TOPICS = "https://mocki.io/v1/a982a2ee-f9ed-42ff-9b3e-577221d095f2"
+const GET_TOPICS = "https://lastminuteprep.mocklab.io/v1/topics"
 
 export const GetTopics = createAsyncThunk<Topic[], void, { rejectValue: FetchHttpError }>(
-    "dashboard/getStatistics",
+    "topics/getTopics",
     async (_number, thunkApi) => {
         const response = await axios.get(GET_TOPICS);
 
         if (response.status !== 200) {
             return thunkApi.rejectWithValue({
-                message: "Failed to fetch Statistics"
+                message: "Failed to fetch Topics"
             })
         }
         return response.data;

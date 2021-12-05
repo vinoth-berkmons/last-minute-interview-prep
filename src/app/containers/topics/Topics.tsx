@@ -20,7 +20,7 @@ const Topics: FC = () => {
      */
     useEffect(() => {
         dispatch(GetTopics())
-    })
+    },[])
 
     /**
      * Get the list of topics
