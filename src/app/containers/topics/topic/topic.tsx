@@ -1,6 +1,12 @@
 import { FC } from 'react';
 import { Topic } from '../../../common/models/Topics';
 
+/**
+ * 
+ * show the list of topics
+ * @returns 
+ */
+
 const TopicItem: FC<Props> = ({cardProp}) => {
     return (
         <>

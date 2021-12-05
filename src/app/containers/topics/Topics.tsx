@@ -28,6 +28,9 @@ const Topics: FC = () => {
     const topics = useTypedSelector(selectTopics)
 
     return (
+        /**
+         * Prepare the data to send to the topic item component
+         */
         <>
             <div className="container mx-auto p-3">
                 <div className="card bg-white">

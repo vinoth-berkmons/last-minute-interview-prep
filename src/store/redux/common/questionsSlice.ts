@@ -3,6 +3,17 @@ import { QuestionsHttpState } from '../../../app/common/models/Common';
 import { GetQuestionList } from '../../../app/common/services/questions';
 import { RootState } from '../RootReducer';
 
+/**
+ * 
+ * @param state contains all the reducer
+ * create questions selector to get the list of questions
+ * create selector for selecting status of the questions API
+ * @returns 
+ */
+
+/**
+ * Setup initial state when the page loads
+ */
 const initialState = {
     questions: [],
     status: "done",
@@ -14,6 +25,11 @@ const initialState = {
 export const selectQuestionsStatus = (state: RootState) => state.questions.status;
 export const selectQuestions = (state: RootState) => state.questions;
 
+
+/**
+ *  Get the list of questions
+ * handle error and send the error message if it fails
+ */
 
 const questionsSlice = createSlice({
     name: "topic",

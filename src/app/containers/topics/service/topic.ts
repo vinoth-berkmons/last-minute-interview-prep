@@ -4,8 +4,10 @@ import axios from 'axios';
 import { FetchHttpError } from '../../../common/models/Common';
 import { Topic } from '../../../common/models/Topics';
 
-
-
+/**
+ *  Get the list of topics
+ * handle error and send the error message if it fails
+ */
 
 const GET_TOPICS = "https://lastminuteprep.mocklab.io/v1/topics"
 
