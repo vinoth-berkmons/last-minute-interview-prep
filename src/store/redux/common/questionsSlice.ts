@@ -3,9 +3,6 @@ import { QuestionsHttpState } from '../../../app/common/models/Common';
 import { GetQuestionList } from '../../../app/common/services/questions';
 import { RootState } from '../RootReducer';
 
-
-
-
 const initialState = {
     questions: [],
     status: "done",
