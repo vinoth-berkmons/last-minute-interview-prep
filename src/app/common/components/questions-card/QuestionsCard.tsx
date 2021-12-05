@@ -2,7 +2,12 @@ import { FC } from 'react';
 import { CardStyle, Questions } from '../../models/Common';
 
 
-
+/**
+ * QuestionsCard component is used to list all type of questions
+ * this component contains questions, topic as badge
+ * @param  
+ * @returns 
+ */
 
 const QuestionsCard: FC<Props> = ({ cardProp, cardStyle }) => {
     return (

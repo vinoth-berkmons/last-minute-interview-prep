@@ -1,3 +1,6 @@
+/**
+ * StatisticsLabel is where type of statistics have in app and  displayed in dashboard
+ */
 export type StatisticsLabel = 'QUESTIONS' | 'TOPICS' | 'ASSIGNMENTS' | 'INTERVIEWS';
 export interface DashboardStatistics {
     id: string;
@@ -5,6 +8,9 @@ export interface DashboardStatistics {
     count: number;
 }
 
+/**
+ * list of questions
+ */
 export interface Questions {
     id: string;
     question: string;
@@ -12,6 +18,19 @@ export interface Questions {
     label: string;
 }
 
+
+/**
+ * Common card style
+ */
+export interface CardStyle {
+    bg?: string;
+    headerTitle?: string;
+    color?: string;
+}
+
+/**
+ * Http loading error state used for all the API call
+ */
 export interface HttpLoadingAndErrorState {
     status: "loading" | "done";
     error: string | null;
@@ -25,11 +44,6 @@ export interface QuestionsHttpState extends HttpLoadingAndErrorState {
     questions: Questions[];
 }
 
-export interface CardStyle {
-    bg?: string;
-    headerTitle?: string;
-    color?: string;
-}
 
 export type FetchHttpError = {
     message: string;

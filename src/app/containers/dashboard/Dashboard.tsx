@@ -45,7 +45,6 @@ const Dashboard: FC = () => {
     const statistics = useTypedSelector(selectDashboardStatistics)
     const questions = useTypedSelector(selectQuestions)
 
-    console.log('statistics', statistics);
     /**
      * Prepare props for Question component
      */
@@ -56,11 +55,13 @@ const Dashboard: FC = () => {
 
     return (
         <>
+            { /**
+                Prepare data for dashboard statistics and pass to the component
+            */}
             <div className="container mx-auto p-3">
                 <div className="flex flex-wrap -mx-2 overflow-hidden">
                     {statistics.status === 'loading' ? "Loading...." :
                         statistics.statistics.map(statistic => {
-                            console.log('statistics', statistics);
                             const labelCaps: StatisticsLabel = (statistic.label.toUpperCase()) as StatisticsLabel;
                             const style = DASHBOARD_STATISTICS[`${labelCaps}`].style;
                             return <Card
@@ -73,6 +74,9 @@ const Dashboard: FC = () => {
                 </div>
             </div>
 
+            { /**
+                Prepare data for today's questions and pass to the question component
+            */}
             <div className="container mx-auto p-3">
                 {
                     questions.status === 'loading' ? 'Loading....' : <QuestionsCard

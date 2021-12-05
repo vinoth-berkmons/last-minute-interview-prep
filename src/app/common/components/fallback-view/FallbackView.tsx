@@ -1,3 +1,10 @@
+
+/**
+ *This component will triggers when the page loads
+ *
+ * @export
+ * @returns
+ */
 export function FallbackView() {
     return (
       <div className='splash-screen'>

@@ -2,6 +2,11 @@ import React, { FC } from 'react';
 
 import { CardStyle, DashboardStatistics } from '../../models/Common';
 
+/**
+ * This component serve the purpose of showing the statistics of the App
+ * card type component, each card hold each category of the app
+ * @returns 
+ */
 
 const Card: FC<Props> = ({ cardProp, cardStyle }) => {
     return (

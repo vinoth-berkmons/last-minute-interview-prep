@@ -1,3 +1,12 @@
+/**
+ * All the const data wil be placed it here
+ * 
+ */
+
+
+/**
+ * DASHBOARD_STATISTICS is style of the card
+ */
 export const DASHBOARD_STATISTICS = {
     "QUESTIONS": {
         "style": {
