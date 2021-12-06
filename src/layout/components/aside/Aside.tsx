@@ -1,7 +1,7 @@
 import './Aside.css';
 
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { DefaultRouteConfig } from '../../../app/common/models/Common';
 import { defaultRouteConfig } from '../../../app/routing/PublicRoutes';
@@ -22,10 +22,9 @@ const Aside: FC = () => {
                             {
                                 menuItem.map(item => {
                                     return <div key={`${item.id}`} className="menu-item">
-                                        {/* <Link to="/home" activeStyle={{textDecoration:"underline" , color:"red"}}> Dashboard </Link> */}
-                                        <Link className="menu-link" to={`${item.link}`}>
+                                        <NavLink activeClassName={`${item.activate}`} className="menu-link" to={`${item.link}`}>
                                             <span>{item.label}</span>
-                                        </Link>
+                                        </NavLink>
                                     </div>
                                 })
                             }

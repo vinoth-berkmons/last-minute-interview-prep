@@ -33,22 +33,30 @@ export function defaultRouteConfig(): DefaultRouteConfig[] {
         {
             id: 'menu-1',
             label: 'Dashboard',
-            link: '/dashboard'
+            link: '/dashboard',
+            activate: 'txt-light-blue',
+            hover: 'txt-light-blue',
         },
         {
             id: 'menu-2',
             label: 'Topics',
-            link: '/topics'
+            link: '/topics',
+            activate: 'txt-light-blue',
+            hover: 'txt-light-blue',
         },
         {
             id: 'menu-3',
             label: 'Interview',
-            link: '/interviews'
+            link: '/interviews',
+            activate: 'txt-light-blue',
+            hover: 'txt-light-blue',
         },
         {
             id: 'menu-4',
             label: 'Assignments',
-            link: '/assignments'
+            link: '/assignments',
+            activate: 'txt-light-blue',
+            hover: 'txt-light-blue',
         }
     ]
 }

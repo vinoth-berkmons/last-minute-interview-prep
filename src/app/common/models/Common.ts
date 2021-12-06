@@ -55,4 +55,6 @@ export interface DefaultRouteConfig {
     id: string;
     link: string;
     label: string;
+    activate: string;
+    hover: string;
 }
