@@ -1,9 +1,14 @@
-import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import './Aside.css';
+
+import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+
+import { DefaultRouteConfig } from '../../../app/common/models/Common';
+import { defaultRouteConfig } from '../../../app/routing/PublicRoutes';
 
 
 const Aside: FC = () => {
+    const menuItem: DefaultRouteConfig[] = defaultRouteConfig();
     return (
         <div className="aside aside-fixed">
             <div className="relative ">
@@ -13,27 +18,17 @@ const Aside: FC = () => {
                     </div>
                     <div className="aside-menu hover-scroll-overlay-y">
                         <div className="menu menu-column ">
-                            <div className="menu-item">
-                            {/* <Link to="/home" activeStyle={{textDecoration:"underline" , color:"red"}}> Dashboard </Link> */}
-                                <Link className="menu-link" to="/dashboard">
-                                    <span>Dashboard</span>
-                                </Link>
-                            </div>
-                            <div className="menu-item">
-                                <Link className="menu-link" to="/topics">
-                                    <span>Topics</span>
-                                </Link>
-                            </div>
-                            <div className="menu-item">
-                                <a className="menu-link">
-                                    <span>Interviews</span>
-                                </a>
-                            </div>
-                            <div className="menu-item">
-                                <a className="menu-link">
-                                    <span>Assignments</span>
-                                </a>
-                            </div>
+
+                            {
+                                menuItem.map(item => {
+                                    return <div key={`${item.id}`} className="menu-item">
+                                        {/* <Link to="/home" activeStyle={{textDecoration:"underline" , color:"red"}}> Dashboard </Link> */}
+                                        <Link className="menu-link" to={`${item.link}`}>
+                                            <span>{item.label}</span>
+                                        </Link>
+                                    </div>
+                                })
+                            }
                         </div>
                     </div>
                 </div>

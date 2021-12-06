@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { FallbackView } from '../common/components/fallback-view/FallbackView';
+import { DefaultRouteConfig } from '../common/models/Common';
 
 
 /**
@@ -26,4 +27,28 @@ export function PublicRoutes() {
     )
 }
 
-/** Route Links */
+/** Const Route Links */
+export function defaultRouteConfig(): DefaultRouteConfig[] {
+    return [
+        {
+            id: 'menu-1',
+            label: 'Dashboard',
+            link: '/dashboard'
+        },
+        {
+            id: 'menu-2',
+            label: 'Topics',
+            link: '/topics'
+        },
+        {
+            id: 'menu-3',
+            label: 'Interview',
+            link: '/interviews'
+        },
+        {
+            id: 'menu-4',
+            label: 'Assignments',
+            link: '/assignments'
+        }
+    ]
+}

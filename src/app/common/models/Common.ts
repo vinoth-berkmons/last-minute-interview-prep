@@ -48,3 +48,11 @@ export interface QuestionsHttpState extends HttpLoadingAndErrorState {
 export type FetchHttpError = {
     message: string;
 }
+
+
+/** Routes */
+export interface DefaultRouteConfig {
+    id: string;
+    link: string;
+    label: string;
+}
