@@ -3,6 +3,14 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { FallbackView } from '../common/components/fallback-view/FallbackView';
 
+
+/**
+ *All the public routes goes here
+ Fall back view component to take card of the page before it renders
+ *
+ * @export
+ * @returns
+ */
 export function PublicRoutes() {
 
     const Dashboard = lazy(() => import('../containers/dashboard/Dashboard'))
