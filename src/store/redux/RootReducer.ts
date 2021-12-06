@@ -5,8 +5,13 @@ import questionsSlice from "./common/questionsSlice";
 
 
 /**
- * Root reducer holds all the reducer of the app
+ * All the common reducers placed in store->redux->common
+ * Other reducers are placed in respective directory
  */
+
+/**
+ * Root reducer holds all the reducer of the app
+*/
 export const rootReducer = combineReducers({
     topics: topicSlice,
     dashboard: dashboardSlice,
